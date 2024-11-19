@@ -14,12 +14,15 @@ now = datetime.datetime.now()
 # Get the current year
 current_year = now.year
 
-# Define the start and end dates for the desired months
-start_date = datetime.datetime(current_year, 9, 1)  # September 1st
-end_date = datetime.datetime(current_year, 11, 30)  # November 30th
+# Manually set the start and end dates
+start_date = datetime.datetime(2024, 9, 1)  # September 1st, 2024
+end_date = datetime.datetime(2024, 11, 19)  # November 19th, 2024
 
-# Adjust the pointer to start from the end_date
-pointer = (now - end_date).days
+# Calculate the total number of days in the desired range
+total_days_in_range = (end_date - start_date).days + 1
+
+# Initialize the pointer to start from the end_date
+pointer = 0
 
 f = open("commit.txt", "w")
 os.system("git config user.name")
@@ -30,7 +33,7 @@ while tl > 0:
     ct = commit_frequency
     while ct > 0:
         f = open("commit.txt", "a+")
-        l_date = end_date + datetime.timedelta(days=-pointer)
+        l_date = end_date - datetime.timedelta(days=pointer)
         
         # Check if the date is within the desired range
         if start_date <= l_date <= end_date:
@@ -44,6 +47,11 @@ while tl > 0:
         
         f.close()
         pointer += 1
+        
+        # Reset pointer if it exceeds the total days in range
+        if pointer >= total_days_in_range:
+            pointer = 0
+            break
     tl -= 1
 
 os.system(f"git remote add origin {repo_link}")
