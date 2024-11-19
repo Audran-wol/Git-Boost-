@@ -2,7 +2,7 @@ import os
 from datetime import date, time, datetime
 import datetime
 
-total_day = 366 #total days back
+total_day = 201 #total days back
 commit_frequency = 10 #commit time per day
 repo_link = "git@github.com:Audran-wol/Lok.git"
 
