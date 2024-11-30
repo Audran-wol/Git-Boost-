@@ -30,7 +30,7 @@ while tl > 0:
     ct = commit_frequency
     while ct > 0:
         f = open("commit.txt", "a+")
-        l_date = now + datetime.timedelta(days=-pointer)
+        l_date = end_date + datetime.timedelta(days=-pointer)
         
         # Check if the date is within the desired range
         if start_date <= l_date <= end_date:
