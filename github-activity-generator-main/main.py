@@ -3,8 +3,8 @@ from datetime import date, time, datetime
 import datetime
 
 total_day = 201 #total days back
-commit_frequency = 10 #commit time per day
-repo_link = "git@github.com:Audran-wol/Lok.git"
+commit_frequency = 2 #commit time per day
+repo_link = "git@github.com:Audran-wol/Koholo.git"
 
 tl = total_day #time day
 ctr = 1
@@ -15,8 +15,8 @@ now = datetime.datetime.now()
 current_year = now.year
 
 # Manually set the start and end dates
-start_date = datetime.datetime(2024, 9, 1)  # September 1st, 2024
-end_date = datetime.datetime(2024, 11, 19)  # November 19th, 2024
+start_date = datetime.datetime(2024, 11, 29)  # September 1st, 2024
+end_date = datetime.datetime(2024, 12, 2)  # November 19th, 2024
 
 # Calculate the total number of days in the desired range
 total_days_in_range = (end_date - start_date).days + 1
